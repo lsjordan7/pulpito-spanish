@@ -14,6 +14,7 @@ function updateXP(){if($("#xp-pill"))$("#xp-pill").textContent=state.xp+" XP"}
 function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
 const navs=[["home","Today"],["cards","Flashcards"],["verbs","Verb studio"],["quiz","Quiz room"],["reader","Sermon read-along"],["voice","Your voice"],["lessons","Grammar & theology"],["progress","Your progress"]];
 $("#nav").innerHTML=navs.map(([id,t],i)=>'<a href="#'+id+'" data-nav="'+id+'"><span>0'+(i+1)+'</span>'+t+'</a>').join("");
+$(".skip").onclick=e=>{e.preventDefault();$("#main").focus();$("#main").scrollIntoView({block:"start"})};
 let route="home",voices=[],speechRun=0,currentUtterance=null,playState="stopped",readerIndex=0,sermonIndex=0,shadow=false,loopParagraph=false,readerPulpit=false,recorder=null,recordStream=null,recordURL=null;
 const synth=window.speechSynthesis;
 function refreshVoices(){voices=synth?synth.getVoices():[];if(route==="settings")renderSettings()}

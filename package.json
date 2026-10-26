@@ -1,0 +1,1 @@
+{"name":"pulpito-spanish","version":"1.0.0","private":true,"scripts":{"start":"python3 -m http.server 4173 --directory public","check":"node --check public/app.js && node --check public/data.js"}}

@@ -51,3 +51,11 @@ Translation decisions favour natural speech over English idioms and alliteration
 - `vercel.json`: static deployment settings.
 
 The app does not grade free-form speech or generate live AI translations. Content is curated and can be extended in the data files. System speech providers may process text according to the selected system voice.
+
+## Natural voices on Apple devices
+
+Automatic selection now ranks Spain Spanish voices using the labels exposed by the browser: Premium, Enhanced, Siri, natural/online, then standard. Character voices are deprioritised. Voice metadata has no standard quality rating, so this is a preference heuristic, not a guarantee or sound analysis. Manual choices always take priority when available, with an automatic fallback if that voice is absent on another device. Language tags with underscores are normalised. Voices are refreshed on app focus and foreground return.
+
+Audio settings shows the actual selected voice, quality-label clues, four selectable previews, Apple download guidance, and a natural-pace preset (automatic voice at 1×). Existing saved rates and voice choices are preserved until changed. Newly created profiles default to 1×.
+
+Siri is not a public web TTS endpoint; a Siri-labelled voice can only be used if returned by speechSynthesis.getVoices(). Downloading an Apple accessibility voice does not guarantee browser availability. Spanish-only static sermon pages at /apple-love.html and /apple-leaving.html support Apple Speak Selection / Speak Screen, or Safari Listen to Page when available. Native reading has separate controls and does not update the app playback state, bookmarks or quiz progress.
